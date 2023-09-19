@@ -1,4 +1,4 @@
-e/* styles.css o styles.scss */
+/* styles.css o styles.scss */
 
 /* Estilos generales para pantallas grandes */
 @media screen and (min-width: 768px) {
@@ -99,8 +99,9 @@ body, html {
   margin-right: 10.625em;
 }
 
-
-
+.button{
+  font-family: Arial, sans-serif;
+}
 
 
 
