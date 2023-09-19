@@ -1,9 +1,13 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
-    <img src="assets/layout/images/logoc.png" height="40" class="mr-2"/>
+    <img src="assets/layout/images/logoc.png" height="80" class="mr-2"/>
   </ng-template>
   <ng-template pTemplate="end">
-    <input type="text" pInputText placeholder="Search" class="w-full"/>
+    <p-button label="Sing in" routerLink="/singin" styleClass="p-button-secondary p-button-text" ></p-button>
+    <button pButton pRipple type="button" label="Sing in " class="button" routerLink="/singin"
+            style="margin-right: 50px; width: 100px"></button>
+    <button pButton pRipple type="button" label="Login" class="button" routerLink="/login"
+            style="margin-right: 10px; width: 100px"></button>
   </ng-template>
 </p-menubar>
 <div class="global">
@@ -26,11 +30,11 @@
       <p-chip label="Facebook" image="assets/layout/images/facebook.png" class="redes2"></p-chip>
       <p-chip label="Telegram" image="assets/layout/images/telegram.png" class="redes3"></p-chip>
 
-      <button pButton pRipple type="button" label="Login" class="button" routerLink="/login"></button>
+
       <br><br>
       <button pButton pRipple type="button" label="Prueba Empleado" class="button" routerLink="/empleado"></button>
       <br><br>
-      <button pButton pRipple type="button" label="Sing in " class="button" routerLink="/singin"></button>
+
       <button pButton pRipple type="button" label="admin " class="button" routerLink="/admin"></button>
     </div>
   </div>

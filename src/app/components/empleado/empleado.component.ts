@@ -7,7 +7,21 @@ import {Router} from "@angular/router";
   styleUrls: ['./empleado.component.css']
 })
 export class EmpleadoComponent {
+  items: any;
   constructor(private router: Router) {
+    this.items=[
+      { label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio' },
+      {
+        label: 'Servicios',
+        icon: 'pi pi-briefcase',
+        items: [
+          { label: 'Ver Servicios', icon: 'pi pi-list', routerLink: '/ver-servicios' },
+          { label: 'Agregar Servicios', icon: 'pi pi-plus', routerLink: '/agregar-servicios' }
+        ]
+      },
+      { label: 'Clientes', icon: 'pi pi-users', routerLink: '/clientes' },
+      { label: 'Agenda', icon: 'pi pi-calendar', routerLink: '/agenda' }
+    ];
   }
 
   verServicios(){

@@ -1,3 +1,4 @@
+
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PrincipalComponent} from './components/principal/principal.component';
@@ -11,6 +12,7 @@ import {AgregarservicioComponent} from "./components/agregarservicio/agregarserv
 import {ClientesComponent} from "./components/clientes/clientes.component";
 import {AgregarclienteComponent} from "./components/agregarcliente/agregarcliente.component";
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
+
 
 const routes: Routes = [
 

@@ -20,19 +20,13 @@ interface Product {
 export class PrincipalComponent {
   constructor() {
     this.items=[
-      { label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio' },
-      {
-        label: 'Servicios',
-        icon: 'pi pi-briefcase',
-        items: [
-          { label: 'Ver Servicios', icon: 'pi pi-list', routerLink: '/ver-servicios' },
-          { label: 'Agregar Servicios', icon: 'pi pi-plus', routerLink: '/agregar-servicios' }
-        ]
-      },
-      { label: 'Clientes', icon: 'pi pi-users', routerLink: '/clientes' },
-      { label: 'Agenda', icon: 'pi pi-calendar', routerLink: '/agenda' }
+      { label: 'Iniciar sesión', icon: 'pi pi-sign-in', command: () => this.login() },
     ];
   }
+  login() {
+
+}
+  items: any;
   products: Product[] = [
     {
       name: 'Producto 1',
@@ -111,7 +105,7 @@ export class PrincipalComponent {
       numScroll: 1
     }
   ];
-  items: any;
+
 
 
 }
