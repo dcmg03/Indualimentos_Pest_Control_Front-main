@@ -1,9 +1,17 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="assets/layout/images/logoc.png" height="40" class="mr-2"/>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <input type="text" pInputText placeholder="Search" class="w-full"/>
+  </ng-template>
+</p-menubar>
 <div class="global">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, maxinum-scalable=1.0, mininum-scalable=1.0">
   <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
     <div class="col-12">
-      <img src="assets/layout/images/logoc.png" class="logo2">
+
       <div class="card">
         <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false"
                     [responsiveOptions]="carouselResponsiveOptions">
@@ -20,7 +28,8 @@
 
       <button pButton pRipple type="button" label="Login" class="button" routerLink="/login"></button>
       <br><br>
-       <button pButton pRipple type="button" label="Prueba Empleado" class="button" routerLink="/empleado"></button><br><br>
+      <button pButton pRipple type="button" label="Prueba Empleado" class="button" routerLink="/empleado"></button>
+      <br><br>
       <button pButton pRipple type="button" label="Sing in " class="button" routerLink="/singin"></button>
       <button pButton pRipple type="button" label="admin " class="button" routerLink="/admin"></button>
     </div>

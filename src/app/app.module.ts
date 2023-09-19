@@ -34,6 +34,7 @@ import {TableModule} from "primeng/table";
 import {InputTextModule} from "primeng/inputtext";
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import { ToastComponent } from './components/toast/toast.component';
+import {MenubarModule} from "primeng/menubar";
 
 
 @NgModule({
@@ -55,22 +56,23 @@ import { ToastComponent } from './components/toast/toast.component';
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    ButtonModule,
-    PasswordModule,
-    CheckboxModule,
-    CarouselModule,
-    HttpClientModule,
-    ChipModule,
-    TableModule,
-    InputTextModule,
-    ToastModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        ButtonModule,
+        PasswordModule,
+        CheckboxModule,
+        CarouselModule,
+        HttpClientModule,
+        ChipModule,
+        TableModule,
+        InputTextModule,
+        ToastModule,
+        MenubarModule
+    ],
   providers: [
     MessageService,
   ],
