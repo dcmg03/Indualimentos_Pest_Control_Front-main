@@ -1,0 +1,29 @@
+<div class="global">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, maxinum-scalable=1.0, mininum-scalable=1.0">
+  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="col-12">
+      <img src="assets/layout/images/logoc.png" class="logo2">
+      <div class="card">
+        <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false"
+                    [responsiveOptions]="carouselResponsiveOptions">
+          <ng-template let-product pTemplate="item">
+            <div class="my-5">
+              <img src="{{product.imageUrl}}" [alt]="product.name" class="shadow-4 product-image"/>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+      <p-chip label="Instagram" image="assets/layout/images/instagram.png" class="redes"></p-chip>
+      <p-chip label="Facebook" image="assets/layout/images/facebook.png" class="redes2"></p-chip>
+      <p-chip label="Telegram" image="assets/layout/images/telegram.png" class="redes3"></p-chip>
+
+      <button pButton pRipple type="button" label="Login" class="button" routerLink="/login"></button>
+      <br><br>
+       <button pButton pRipple type="button" label="Prueba Empleado" class="button" routerLink="/empleado"></button><br><br>
+      <button pButton pRipple type="button" label="Sing in " class="button" routerLink="/singin"></button>
+      <button pButton pRipple type="button" label="admin " class="button" routerLink="/admin"></button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,98 @@
+/* styles.css o styles.scss */
+
+/* Estilos generales para pantallas grandes */
+@media screen and (min-width: 768px) {
+  /* Agrega estilos para pantallas más grandes aquí */
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+  /* Agrega estilos para pantallas más pequeñas aquí */
+}
+
+/* Fondo */
+:host ::ng-deep body, :host ::ng-deep html {
+  overflow: hidden;
+}
+
+/* Estilos de la imagen de fondo */
+:host ::ng-deep .surface-ground {
+  background-image: url("src/assets/layout/images/fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*Botón*/
+:host ::ng-deep .boton {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: block;
+  border-radius: 54px;
+  cursor: pointer;
+  border-color: black;
+  background-color: rgb(0, 0, 0);
+}
+
+:host ::ng-deep .logo{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 200px;
+  height: 200px;
+}
+
+/*contenedor*/
+:host ::ng-deep.contenedor{
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
+  max-width: 60%;
+  margin:0px auto;
+  color: black;
+  padding: 2rem 3rem;
+  margin: auto;
+  border-radius: 2.5rem;
+  color: black;
+  margin-top: 1rem;
+}
+
+:host ::ng-deep.titulos{
+  display: block;
+  margin: 0.5rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: none;
+  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
+      rgba(0, 0, 0, 0.1);
+  border: 1 none;
+  background: #ebf5fc;
+}
+
+:host ::ng-deep .titulo{
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+:host ::ng-deep .texto {
+  left: auto;
+  right: auto;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+:host ::ng-deep.imgusuario{
+  width: 120px;
+  height: 120px;
+  margin-right: 325px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+

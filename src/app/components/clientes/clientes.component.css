@@ -1,0 +1,44 @@
+/* styles.css o styles.scss */
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 768px) {
+  /* Agrega estilos para pantallas más grandes aquí */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 767px) {
+  /* Agrega estilos para pantallas más pequeñas aquí */
+}
+
+
+/* Fondo */
+:host body, :host html {
+  overflow: hidden;
+}
+.logo{
+  width: 10%; /* Establece el ancho de la imagen al 50% del ancho del contenedor */
+  height: 100px; /* Mantén la proporción original de la imagen ajustando la altura automáticamente */
+
+}
+:host .surface-ground {
+  background-image: url("src/assets/layout/images/fondo.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.agcliente{
+  margin-top: 50px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  width: 10%;
+  height: 5vh;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}

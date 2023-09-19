@@ -1,0 +1,100 @@
+e/* styles.css o styles.scss */
+
+/* Estilos generales para pantallas grandes */
+@media screen and (min-width: 768px) {
+  /* Agrega estilos para pantallas más grandes aquí */
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and(max-width: 767px) {
+  /* Agrega estilos para pantallas más pequeñas aquí */
+}
+
+/* Fondo */
+body, html {
+  overflow: hidden;
+}
+
+.global{
+  width: 100%;
+  max-width: 100em;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.product-image {
+  width: 11.25em;
+  height: 11.25em;
+  box-sizing: border-box;
+}
+
+/* Fondo */
+:host ::ng-deep body, :host ::ng-deep html {
+  max-width: 100em;
+  overflow: hidden;
+}
+
+:host ::ng-deep .surface-ground {
+  background-image: url("src/assets/layout/images/fondo.jpg")!important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/*Botón*/
+.button {
+  float: right;
+  width: 15%;
+  border-radius: 54px;
+  border-color: black;
+  background-color: rgb(0, 0, 0);
+}
+
+/*Imagenes*/
+:host ::ng-deep .logo{
+  width: 10em;
+  height: 10em;
+  margin-right: 20.3125em;
+}
+
+:host ::ng-deep .logo2{
+  width: 21.875em;
+  height: 10em;
+}
+
+:host ::ng-deep .mb-5 {
+  font-family: Arial, sans-serif;
+}
+
+
+:host ::ng-deep  .min-h-screen {
+  min-height: 97.5vh !important;
+}
+
+
+:host ::ng-deep  .min-w-screen {
+  min-width: 95vw !important;
+}
+
+/*redes*/
+:host ::ng-deep .redes{
+  margin-left: 12.5em;
+  margin-right: 10.625em;
+}
+
+:host ::ng-deep .redes2{
+  margin-right: 10.625em;
+}
+
+:host ::ng-deep .redes3{
+  margin-right: 10.625em;
+}
+
+
+
+
+
+
+
+

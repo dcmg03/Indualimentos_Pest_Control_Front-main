@@ -1,0 +1,39 @@
+<div class="surface-ground  min-h-screen min-w-screen overflow-hidden">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center">AGREGAR CLIENTE</h1>
+      <ng-form (ngSubmit)="agregarCliente()" #clienteForm="ngForm">
+        <div class="form-group">
+          <ng-container for="id">ID:</ng-container>
+          <input type="number" id="id" name="id" [(ngModel)]="nuevoCliente.id" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoCliente.nombre" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoCliente.apellido" class="form-control"
+                 required>
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" name="direccion" [(ngModel)]="nuevoCliente.direccion" class="form-control"
+                 required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" [(ngModel)]="nuevoCliente.telefono" class="form-control"
+                 required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Agregar Cliente</button>
+        </div>
+      </ng-form>
+    </div>
+  </div>
+</div>
+
+
+
+

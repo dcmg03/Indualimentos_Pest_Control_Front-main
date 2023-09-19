@@ -1,0 +1,13 @@
+
+/* Fondo */
+:host body, :host html {
+  overflow: hidden;
+}
+
+:host .surface-ground {
+ background-color: #a8f583!important; /* Cambia el color de fondo según tus preferencias
+  /*background-image: url("src/assets/layout/images/fondo.jpg") !important;*/
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}

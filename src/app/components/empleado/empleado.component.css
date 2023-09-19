@@ -1,0 +1,77 @@
+e/* styles.css o styles.scss */
+
+/* Estilos generales para pantallas grandes */
+@media screen and (min-width: 768px) {
+  /* Agrega estilos para pantallas más grandes aquí */
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and(max-width: 767px) {
+  /* Agrega estilos para pantallas más pequeñas aquí */
+}
+
+/* Fondo */
+body, html {
+  overflow: hidden;
+}
+
+.surface-ground {
+  background-image: url("src/assets/layout/images/fondo.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.services {
+  position: absolute;
+  top: 100px; /* Ajusta la distancia desde la parte superior de la página */
+  left: 200px; /* Ajusta la distancia desde la izquierda de la página */
+  float: right;
+  border-radius: 54px;
+  border-color: black;
+  background-color: white;
+
+}
+
+.clientes {
+  position: absolute;
+  top: 100px; /* Ajusta la distancia desde la parte superior de la página */
+  left: 200px; /* Ajusta la distancia desde la izquierda de la página */
+  float: right;
+  border-radius: 54px;
+  border-color: black;
+  background-color: white;
+
+}
+
+.agenda {
+  position: absolute;
+  top: 100px; /* Ajusta la distancia desde la parte superior de la página */
+  left: 200px; /* Ajusta la distancia desde la izquierda de la página */
+  float: right;
+  border-radius: 54px;
+  border-color: black;
+  background-color: white;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+.navItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.logo{
+  height: 10vh;
+}
+
+
+
+
+

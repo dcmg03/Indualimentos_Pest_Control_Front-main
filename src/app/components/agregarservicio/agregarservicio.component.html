@@ -1,0 +1,33 @@
+<div class="global">
+  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="col-12">
+
+      <img src="assets/layout/images/logo.png" class="logo">
+      <h1>AGREGAR SERVICIO</h1>
+      <form (ngSubmit)="agregarServicio()" #servicioForm="ngForm">
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input type="number" id="id" name="id" [(ngModel)]="nuevoServicio.id" required>
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoServicio.nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" [(ngModel)]="nuevoServicio.descripcion" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="tipoServicio">Tipo de Servicio:</label>
+          <input type="text" id="tipoServicio" name="tipoServicio" [(ngModel)]="nuevoServicio.tipoServicio" required>
+        </div>
+        <div class="form-group">
+          <label for="precioMetroCubico">Precio por Metro Cúbico:</label>
+          <input type="number" id="precioMetroCubico" name="precioMetroCubico"
+                 [(ngModel)]="nuevoServicio.precioMetroCubico" required>
+        </div>
+        <button type="submit">Agregar </button>
+      </form>
+    </div>
+  </div>
+</div>

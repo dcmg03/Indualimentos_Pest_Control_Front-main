@@ -1,0 +1,8 @@
+/* Ejemplo de estilos personalizados para p-toast */
+:host ::ng-deep .p-toast {
+  width: 350px; /* Ancho personalizado */
+  height: auto; /* Altura automática */
+  padding: 10px; /* Espaciado interno personalizado */
+  font-size: 14px; /* Tamaño de fuente personalizado */
+  margin: 10px; /* Margen personalizado */
+}

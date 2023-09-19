@@ -1,0 +1,19 @@
+<div class="global">
+  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="col-12">
+
+
+
+      <h2>Agenda del Día</h2>
+
+      <div *ngFor="let servicio of programacion">
+        <div class="servicio">
+          <p>{{ servicio.hora }} - {{ servicio.nombre }}</p>
+          <button (click)="cancelarServicio(servicio)">Cancelar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

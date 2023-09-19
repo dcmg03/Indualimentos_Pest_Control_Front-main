@@ -1,0 +1,24 @@
+/* styles.css o styles.scss */
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 768px) {
+  /* Agrega estilos para pantallas más grandes aquí */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 767px) {
+  /* Agrega estilos para pantallas más pequeñas aquí */
+}
+
+
+/* Fondo */
+:host body, :host html {
+  overflow: hidden;
+}
+
+:host .surface-ground {
+  background-image: url("src/assets/layout/images/fondo.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}

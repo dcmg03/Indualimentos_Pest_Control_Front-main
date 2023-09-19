@@ -1,0 +1,29 @@
+
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <img src="assets/layout/images/logoc.png" class="logo">
+  <div class="flex flex-column align-items-center justify-content-center">
+    <div class="titulo">
+      <span class="text-600 font-medium">Ingresar</span>
+    </div>
+    <div class="contenedor">
+        <div>
+          <img src="assets/layout/images/usu.png" class="imgusuario">
+          <label for="email" class="texto">Usuario</label>
+          <input id="email"  [(ngModel)]="user.user" type="text" placeholder="Usuario" pInputText class="titulos" style="padding:1rem">
+
+          <label for="password" class="texto">Contraseña</label>
+          <p-password id="password" [(ngModel)]="user.password" placeholder="Password" [toggleMask]="true" inputStyleClass="titulos"></p-password>
+
+          <div class="contraseñaOlvidar">
+            <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button pButton pRipple label="Ingresar" class="boton" (click)="login()"></button>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+

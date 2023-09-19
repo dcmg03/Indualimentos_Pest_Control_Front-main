@@ -1,0 +1,31 @@
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <div class="flex flex-column align-items-center justify-content-center">
+    <div class="titulo">
+      <span class="text-600 font-medium">Crear Nueva Cuenta</span>
+      <img src="assets/layout/images/logoc.png" class="logo">
+    </div>
+    <div class="contenedor">
+        <div>
+          <label for="name" class="texto">Nombre</label>
+          <input id="name"  [(ngModel)]="newUser.name" type="text" placeholder="Nombre" pInputText class="titulos" style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
+
+          <label for="user" class="texto">Usuario</label>
+          <input id="user"  [(ngModel)]="newUser.user" type="text" placeholder="Usuario" pInputText class="titulos" style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
+
+          <label for="correo" class="texto">Correo</label>
+          <input id="correo" type="text" name="correo" [(ngModel)]="newUser.correo" type="text" placeholder="Correo" pInputText class="titulos" style="padding:1rem" pattern=".+@gmail\.com" size="30" required>
+
+          <label for="direccion" class="texto">Direccion</label>
+          <input id="direccion"  [(ngModel)]="newUser.direccion" type="text" placeholder="Direccion" pInputText class="titulos" style="padding:1rem" required>
+
+          <div class="contraseñaOlvidar">
+            <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidaste tu contraseña?</a>
+          </div>
+          <div class = "boton">
+            <p-button label="Ingresar" styleClass="p-button-rounded p-button-secondary" (click)="register()"></p-button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
