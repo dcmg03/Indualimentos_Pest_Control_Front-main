@@ -1,38 +1,29 @@
-<div class="surface-ground  min-h-screen min-w-screen overflow-hidden">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="titulo">
-        <span class="text-600 font-medium">Crear Nueva Cuenta</span>
-        <img src="assets/layout/images/logoc.png" class="logo">
-      </div>
-      <div class = "contenedor">
-        <ng-form (ngSubmit)="agregarCliente()" #clienteForm="ngForm">
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoCliente.nombre" class="form-control"  pInputText class="titulos" style="padding:1rem" required>
-          </div>
-          <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoCliente.apellido" class="form-control"  pInputText class="titulos" style="padding:1rem" required>
-          </div>
-          <div class="form-group">
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" [(ngModel)]="nuevoCliente.direccion" class="form-control"  pInputText class="titulos" style="padding:1rem" required>
-          </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" [(ngModel)]="nuevoCliente.telefono" class="form-control"  pInputText class="titulos" style="padding:1rem" required>
-          </div>
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <div class="flex flex-column align-items-center justify-content-center">
+    <div class="titulo">
+      <span class="text-600 font-medium">Agregar Nuevo Cliente</span>
+      <img src="assets/layout/images/logoc.png" class="logo">
+    </div>
+    <ng-form (ngSubmit)="agregarCliente()" #clienteForm="ngForm">
+      <div class="contenedor">
+        <div>
+          <label for="name" class="texto">Nombre</label>
+          <input id="name"  [(ngModel)]="nuevoCliente.nombre" type="text" placeholder="Nombre" pInputText class="titulos" style="padding:1rem" required>
+
+          <label for="user" class="texto">Usuario</label>
+          <input id="user"  [(ngModel)]="nuevoCliente.apellido" type="text" placeholder="Usuario" pInputText class="titulos" style="padding:1rem" required>
+
+          <label for="direccion" class="texto">Direccion</label>
+          <input id="direccion"  [(ngModel)]="nuevoCliente.direccion" type="text" placeholder="Direccion" pInputText class="titulos" style="padding:1rem" required>
+
+          <label for="telefono" class="texto">Telefono</label>
+          <input id="telefono" type="tel" name="telefono" [(ngModel)]="nuevoCliente.telefono" type="text" placeholder="telefono" pInputText class="titulos" style="padding:1rem" pattern=".+@gmail\.com" size="30" required>
+
           <div class = "boton">
             <p-button label="Agregar Cliente" styleClass="p-button-rounded p-button-secondary"></p-button>
           </div>
-        </ng-form>
+        </div>
       </div>
-
-    </div>
+    </ng-form>
   </div>
 </div>
-
-
-
-

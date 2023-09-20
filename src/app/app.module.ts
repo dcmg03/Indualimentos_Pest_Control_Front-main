@@ -12,7 +12,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import {CarouselModule} from 'primeng/carousel';
 import { ChipModule } from 'primeng/chip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
@@ -52,8 +52,7 @@ import {MenubarModule} from "primeng/menubar";
     ClientesComponent,
     AgregarclienteComponent,
     PasswordChangeComponent,
-    ToastComponent
-
+    ToastComponent,
 
   ],
     imports: [
@@ -71,7 +70,8 @@ import {MenubarModule} from "primeng/menubar";
         TableModule,
         InputTextModule,
         ToastModule,
-        MenubarModule
+        MenubarModule,
+        CascadeSelectModule
     ],
   providers: [
     MessageService,

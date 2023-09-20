@@ -21,19 +21,20 @@
 /* Estilos de la imagen de fondo */
 :host ::ng-deep .surface-ground {
   background-image: url("src/assets/layout/images/fondo.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 /*Botón*/
 .boton{
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 800%;
   display: block;
   border-radius: 54px;
   cursor: pointer;
+  margin: 30px;
 }
 
 .logo{
@@ -48,11 +49,11 @@
 .contenedor{
   margin-left: auto;
   margin-right: auto;
-  min-width: 1000px;
-  max-width: 60%;
+  min-width: 30px;
+  max-width: 70%;
   margin:0px auto;
   color: black;
-  padding: 2rem 3rem;
+  padding: 1rem 5rem;
   margin: auto;
   border-radius: 2.5rem;
   font-family: Arial, sans-serif;
@@ -63,10 +64,11 @@
 .titulos{
   display: block;
   margin: 0.5rem 0;
-  width: 100%;
+  width: 150%;
   border-radius: 0.5rem;
   padding: 1rem;
   border: none;
+  margin: 5px;
   box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
       rgba(0, 0, 0, 0.1);
   border: 1 none;
@@ -80,10 +82,9 @@
   font-family: Arial, sans-serif;
 }
 
-:host ::ng-deep .texto {
+.texto {
   left: auto;
   right: auto;
   position: relative;
   font-family: Arial, sans-serif;
 }
-
