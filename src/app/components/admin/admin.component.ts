@@ -7,8 +7,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+  items: any;
   constructor(private router: Router) {
+    this.items=[
+
+    ];
   }
+
 
 
 }
