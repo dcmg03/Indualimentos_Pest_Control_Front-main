@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { CalendarModule } from 'primeng/calendar';
 
 // nuevos modulos
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -71,7 +72,8 @@ import {MenubarModule} from "primeng/menubar";
         InputTextModule,
         ToastModule,
         MenubarModule,
-        CascadeSelectModule
+        CascadeSelectModule,
+        CalendarModule
     ],
   providers: [
     MessageService,

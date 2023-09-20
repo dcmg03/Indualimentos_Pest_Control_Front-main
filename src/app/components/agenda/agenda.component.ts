@@ -8,6 +8,7 @@ import {AgendaService} from './agenda.service';
 })
 export class AgendaComponent implements OnInit {
   programacion: any[]=[];
+  date:any; 
 
   constructor(private agendaService: AgendaService) {}
 
