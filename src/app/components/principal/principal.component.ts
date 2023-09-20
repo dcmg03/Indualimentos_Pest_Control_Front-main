@@ -20,7 +20,7 @@ interface Product {
 export class PrincipalComponent {
   constructor() {
     this.items=[
-      { label: 'Iniciar sesión', icon: 'pi pi-sign-in', command: () => this.login() },
+
     ];
   }
   login() {
