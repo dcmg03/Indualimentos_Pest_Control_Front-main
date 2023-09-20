@@ -12,7 +12,7 @@ import {AgregarservicioComponent} from "./components/agregarservicio/agregarserv
 import {ClientesComponent} from "./components/clientes/clientes.component";
 import {AgregarclienteComponent} from "./components/agregarcliente/agregarcliente.component";
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
-
+import {AgrEmpleadoComponent} from "./components/agr-empleado/agr-empleado.component";
 
 const routes: Routes = [
 
@@ -27,6 +27,7 @@ const routes: Routes = [
   {path: 'agregarcliente',component:AgregarclienteComponent},
   {path: 'homePage', component: PrincipalComponent},
   {path: 'passwordChange', component: PasswordChangeComponent},
+  {path: 'agregarempleado', component:AgrEmpleadoComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'homePage'}
 
 

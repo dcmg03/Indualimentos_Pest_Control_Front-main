@@ -1,8 +1,16 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="assets/layout/images/logoc.png" height="80" class="mr-2"/>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <input type="text" pInputText placeholder="Search" class="w-full"/>
+  </ng-template>
+</p-menubar>
 <div class="global">
   <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
     <div class="col-12">
-      <img src="assets/layout/images/logo.png" class="logo">
-        <h3>Listado de clientes</h3>
+
+      <h3>Listado de clientes</h3>
       <!-- Utiliza el componente p-table de PrimeNG -->
       <p-table [value]="clientes" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">

@@ -1,7 +1,7 @@
 /* styles.css o styles.scss */
 
 /* Estilos generales para pantallas grandes */
-@media (min-width: 768px) {
+@media screen and  (min-width: 768px) {
   /* Agrega estilos para pantallas más grandes aquí */
 }
 

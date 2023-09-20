@@ -12,11 +12,13 @@ export class ClientesComponent implements OnInit{
   clientes: Cliente[]=[];
   clienteEditado: Cliente | null = null;
   editarClienteForm: FormGroup;
+  items: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private clienteService: ClienteService
   ) {
+    this.items=[];
 
     this.editarClienteForm = this.formBuilder.group({
       id: [''],
