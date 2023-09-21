@@ -1,11 +1,10 @@
+<app-menubar></app-menubar>
 <div class="global">
   <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
     <div class="col-12">
       <div class="titulo">
         <span class="text-600 font-medium">Agenda del Día</span>
-        <img src="assets/layout/images/logoc.png" class="logo">
       </div>
-
       <p-calendar class="calendario" [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
 
       <div *ngFor="let servicio of programacion">
