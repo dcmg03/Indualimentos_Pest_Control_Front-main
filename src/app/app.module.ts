@@ -42,6 +42,7 @@ import { PasswordChangeComponent } from './components/password-change/password-c
 import { ToastComponent } from './components/toast/toast.component';
 import {MenubarModule} from "primeng/menubar";
 import {TagModule} from "primeng/tag";
+import { MenubarComponent } from './components/menubar/menubar.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import {TagModule} from "primeng/tag";
     AgregarclienteComponent,
     PasswordChangeComponent,
     ToastComponent,
+    MenubarComponent,
 
   ],
   imports: [

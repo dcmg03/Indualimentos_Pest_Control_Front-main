@@ -9,10 +9,12 @@ import {EmpleadoComponent} from './components/empleado/empleado.component';
 import {ServiciosComponent} from './components/servicios/servicios.component';
 import {AgendaComponent} from "./components/agenda/agenda.component";
 import {AgregarservicioComponent} from "./components/agregarservicio/agregarservicio.component";
+// @ts-ignore
 import {ClientesComponent} from "./components/clientes/clientes.component";
 import {AgregarclienteComponent} from "./components/agregarcliente/agregarcliente.component";
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import {AgrEmpleadoComponent} from "./components/agr-empleado/agr-empleado.component";
+import {MenubarComponent} from "./components/menubar/menubar.component";
 
 const routes: Routes = [
 
@@ -28,6 +30,7 @@ const routes: Routes = [
   {path: 'homePage', component: PrincipalComponent},
   {path: 'passwordChange', component: PasswordChangeComponent},
   {path: 'agregarempleado', component:AgrEmpleadoComponent},
+  {path: 'menubar', component: MenubarComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'homePage'}
 
 
