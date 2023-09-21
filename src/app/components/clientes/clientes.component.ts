@@ -93,10 +93,6 @@ export class ClientesComponent implements OnInit{
      }
    }
 
-
-
-
-
    fetchData() {
     // Llama al método del servicio para obtener los datos
 

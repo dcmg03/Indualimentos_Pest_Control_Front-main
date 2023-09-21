@@ -9,7 +9,7 @@ export class MenubarComponent {
 
   constructor() {
     this.items = [
-      {label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio'},
+      {label: 'Inicio', icon: 'pi pi-home', routerLink: '/admin'},
       {
         label: 'Empleados', icon: 'pi pi-users',
         items: [
