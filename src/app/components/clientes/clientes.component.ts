@@ -65,8 +65,6 @@ export class ClientesComponent implements OnInit{
   };
 
 
-
-
   editarCliente(cliente: Cliente) {
     this.clienteEditado = cliente;
     this.editarClienteForm.patchValue(cliente);
@@ -142,6 +140,7 @@ export class ClientesComponent implements OnInit{
       console.error(err);
     })
    }
+
 
 }
 
