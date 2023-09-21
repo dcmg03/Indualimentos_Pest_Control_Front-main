@@ -29,11 +29,9 @@ body, html {
   overflow: hidden;
 }
 
-
-
 .product-image {
-  width: 11.25em;
-  height: 11.25em;
+  width: 22em;
+  height: 22em;
   box-sizing: border-box;
 }
 
@@ -86,23 +84,34 @@ body, html {
 }
 
 /*redes*/
-:host ::ng-deep .redes{
-  margin-left: 12.5em;
-  margin-right: 10.625em;
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-:host ::ng-deep .redes2{
-  margin-right: 10.625em;
+
+:host ::ng-deep .social-container p-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
 
-:host ::ng-deep .redes3{
-  margin-right: 10.625em;
+:host ::ng-deep .social-container p-chip img {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
+
+
+
 
 .button{
   font-family: Arial, sans-serif;
 }
-
 
 
 
