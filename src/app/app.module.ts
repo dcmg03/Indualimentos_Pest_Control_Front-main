@@ -28,9 +28,12 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { SinginComponent } from './components/singin/singin.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { AgrEmpleadoComponent } from './components/agr-empleado/agr-empleado.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
+import { AgregarservicioComponent } from './components/agregarservicio/agregarservicio.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { AgregarclienteComponent } from './components/agregarcliente/agregarcliente.component';
 import "@angular/common/http"
 import { HttpClientModule } from '@angular/common/http';
 import {TableModule} from "primeng/table";
@@ -50,9 +53,12 @@ import { MenubarComponent } from './components/menubar/menubar.component';
     SinginComponent,
     AdminComponent,
     EmpleadoComponent,
+    AgrEmpleadoComponent,
     ServiciosComponent,
     AgendaComponent,
+    AgregarservicioComponent,
     ClientesComponent,
+    AgregarclienteComponent,
     PasswordChangeComponent,
     ToastComponent,
     MenubarComponent,
