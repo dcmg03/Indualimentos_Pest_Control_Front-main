@@ -24,8 +24,14 @@ export class AgrEmpleadoComponent {
   }
 
   valCheck: string[] = ['remember'];
+  items: any;
 
-  constructor(public layoutService: LayoutService) { }
+  constructor(public layoutService: LayoutService) {
+    this.items=[
+      {label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio'}
+    ];
+
+  }
 
 
 }

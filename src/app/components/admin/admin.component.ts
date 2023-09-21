@@ -12,6 +12,7 @@ interface Product {
   imageUrl: string;
   inventoryStatus?: InventoryStatus;
 }
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -30,24 +31,98 @@ export class AdminComponent {
         price: 10.99,
         inventoryStatus: InventoryStatus.OutOfStock,
         image: 'assets/layout/images/indupest/ima1.jpg'
-      }// Nombre del archivo de imagen}
+      },
+      {
+        name: 'Producto 2',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima2.jpg'
+
+      },
+      {
+        name: 'Producto 3',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima3.jpg'
+
+      },
+      {
+        name: 'Producto 4',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima4.jpg'
+
+      },
+      {
+        name: 'Producto 5',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima5.jpg'
+
+      },
+      {
+        name: 'Producto 6',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima6.jpg'
+
+      },
+      {
+        name: 'Producto 7',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima7.jpg'
+
+      },
+      {
+        name: 'Producto 8',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima8.jpg'
+
+      },
+      {
+        name: 'Producto 9',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima9.jpg'
+
+      }, {
+        name: 'Producto 10',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima10.jpg'
+
+      }, {
+        name: 'Producto 11',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima11.jpg'
+
+      }, {
+        name: 'Producto 12',
+        price:10.99,
+        inventoryStatus: InventoryStatus.OutOfStock,
+        image: 'assets/layout/images/indupest/ima12.jpg'
+
+      },
     ];
-    this.responsiveOptions=[
-       {
-      breakpoint: '1024px',
-      numVisible: 3,
-      numScroll: 3
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 2,
-      numScroll: 2
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1,
-      numScroll: 1
-    }
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 3,
+        numScroll: 3
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 2
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+        numScroll: 1
+      }
     ]
     this.items = [
       {label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio'},
@@ -62,8 +137,8 @@ export class AdminComponent {
         label: 'Servicios',
         icon: 'pi pi-briefcase',
         items: [
-          {label: 'Ver Servicios', icon: 'pi pi-list', routerLink: '/ver-servicios'},
-          {label: 'Agregar Servicios', icon: 'pi pi-plus', routerLink: '/agregar-servicios'}
+          {label: 'Ver Servicios', icon: 'pi pi-list', routerLink: '/servicios'},
+          {label: 'Agregar Servicios', icon: 'pi pi-plus', routerLink: '/agregarservicio'}
         ]
       },
 
@@ -73,10 +148,4 @@ export class AdminComponent {
   }
 
 
-  getSeverity(inventoryStatus
-                :
-                any
-  ) {
-
-  }
 }

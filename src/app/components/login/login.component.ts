@@ -36,9 +36,15 @@ export class LoginComponent {
   }
 
   valCheck: string[] = ['remember'];
+  items: any;
 
 
 
-  constructor(public layoutService: LayoutService, private authService: AuthService, private router:Router) { }
+  constructor(public layoutService: LayoutService, private authService: AuthService, private router:Router) {
+    this.items=[
+       {label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio'}
+
+    ]
+  }
 
 }

@@ -1,6 +1,14 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="assets/layout/images/logoc.png" height="80" class="mr-2"/>
 
+  </ng-template>
+  <ng-template pTemplate="end">
+    <p-button label="Cerrar sesion" routerLink="/homePage" styleClass="p-button-secondary p-button-text"></p-button>
+  </ng-template>
+</p-menubar>
 <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
-  <img src="assets/layout/images/logoc.png" class="logo">
+
   <div class="flex flex-column align-items-center justify-content-center">
     <div class="titulo">
       <span class="text-600 font-medium">Ingresar</span>

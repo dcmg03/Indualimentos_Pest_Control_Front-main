@@ -14,8 +14,14 @@ export class ClienteService {
   constructor() {
   }
 
-  agregarCliente(nuevoCliente: Cliente) {
-    this.clientes.push(nuevoCliente)
+    agregarCliente(nuevoCliente: {
+        user: string;
+        apellido: string;
+        direccion: string;
+        telefono: string;
+        nombre: string
+    }) {
+    this.clientes.push(<Cliente>nuevoCliente)
   }
 
 
