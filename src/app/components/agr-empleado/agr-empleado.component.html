@@ -1,12 +1,4 @@
-<p-menubar [model]="items">
-  <ng-template pTemplate="start">
-    <img src="assets/layout/images/logoc.png" height="80" class="mr-2"/>
-
-  </ng-template>
-  <ng-template pTemplate="end">
-    <p-button label="Cerrar sesion" routerLink="/homePage" styleClass="p-button-secondary p-button-text"></p-button>
-  </ng-template>
-</p-menubar>
+<app-menubar></app-menubar>
 <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
 
   <div class="flex flex-column align-items-center justify-content-center">
@@ -15,15 +7,14 @@
     </div>
     <div class="contenedor">
         <div>
-
           <label for="name" class="texto">Cedula</label>
-          <input id="name"  [(ngModel)]="newempleado.cedula" type="text" placeholder="Nombre" pInputText class="titulos" style="padding:1rem">
+          <input id="name"  [(ngModel)]="newempleado.cedula" type="text" placeholder="Cedula" pInputText class="titulos" style="padding:1rem">
 
           <label for="email" class="texto">Nombre</label>
-          <input id="email"  [(ngModel)]="newempleado.name" type="text" placeholder="Usuario" pInputText class="titulos" style="padding:1rem">
+          <input id="email"  [(ngModel)]="newempleado.name" type="text" placeholder="Nombre" pInputText class="titulos" style="padding:1rem">
 
-          <label for="password" class="texto">Apellido</label>
-          <p-password id="password" [(ngModel)]="newempleado.apellido" placeholder="Password" [toggleMask]="true" inputStyleClass="titulos"></p-password>
+          <label for="apellido" class="texto">Apellido</label>
+          <input id="apellido"  [(ngModel)]="newempleado.name" type="text" placeholder="Nombre" pInputText class="titulos" style="padding:1rem">
 
           <label for="direccion" class="texto">Contacto</label>
           <input id="direccion"  [(ngModel)]="newempleado.contacto" type="text" placeholder="Direccion" pInputText class="titulos" style="padding:1rem">
