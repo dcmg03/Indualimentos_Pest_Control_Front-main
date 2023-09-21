@@ -1,18 +1,82 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
-    <img src="assets/layout/images/logoc.png" height="80" class="mr-2"/>
+    <img src="assets/layout/images/logoc.png" height="80" class="mr-2" />
   </ng-template>
   <ng-template pTemplate="end">
-    <input type="text" pInputText placeholder="Search" class="w-full"/>
+    <input type="text" pInputText placeholder="Search" class="w-full" />
   </ng-template>
 </p-menubar>
 <!-- inicio-empleado.component.html -->
 <div class="global">
-  <div class="surface-ground flex align-items-start justify-content-center min-h-screen min-w-screen overflow-hidden">
-    <div class="col-12 ">
+  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="col-12">
+      <img src="assets/layout/images/logo.png" class="logo">
+      <h3>Listado de empleados</h3>
+      <!-- Utiliza el componente p-table de PrimeNG -->
+      <p-table [value]="clientes" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
 
 
-      </div>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-cliente>
+
+          <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.name }}</td>
+            <td>{{ cliente.apellido }}</td>
+            <td>{{ cliente.address }}</td>
+            <td>{{ cliente.telefono }}</td>
+            <td>{{ cliente.credential.mail }}</td>
+
+          </tr>
+        </ng-template>
+      </p-table>
+
+      <a class="center">
+        <button class="agcliente" (click)="showDialog()">Agregar Empleado</button>
+      </a>
     </div>
   </div>
+
+  <p-dialog header="Agregar cliente" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+    [draggable]="false" [resizable]="false">
+    <div class="contenedor">
+      <div>
+        <label for="name" class="texto">Nombre</label>
+        <input id="name" [(ngModel)]="newUser.name" type="text" placeholder="Nombre" pInputText class="titulos"
+          style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
+
+        <label for="user" class="texto">Usuario</label>
+        <input id="user" [(ngModel)]="newUser.user" type="text" placeholder="Usuario" pInputText class="titulos"
+          style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
+
+        <label for="correo" class="texto">Correo</label>
+        <input id="correo" type="text" name="correo" [(ngModel)]="newUser.correo" type="text" placeholder="Correo"
+          pInputText class="titulos" style="padding:1rem" pattern=".+@gmail\.com" size="30" required>
+
+        <label for="direccion" class="texto">Direccion</label>
+        <input id="direccion" [(ngModel)]="newUser.direccion" type="text" placeholder="Direccion" pInputText
+          class="titulos" style="padding:1rem" required>
+
+
+
+
+        <div class="boton">
+          <p-button label="registrar" (click)="agregar()" styleClass="p-button-rounded p-button-secondary"></p-button>
+        </div>
+      </div>
+    </div>
+
+  </p-dialog>
+  <app-toast></app-toast>
+</div>
 

@@ -33,8 +33,8 @@ export class ApiService {
     return this.httpClient.get(this.API_URL + model + "/getAllByPage");
   }
 
-  public getAllByFilters(model: string) {
-    return this.httpClient.get(this.API_URL + model + "/getAllByFilters");
+  public getAllByFilters(model: string, body: any) {
+    return this.httpClient.post(this.API_URL + model + "/getAllByFilters", [body]);
   }
 
   public countAllByFilters(model: string) {

@@ -17,6 +17,11 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { CalendarModule } from 'primeng/calendar';
 
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+
+
+
 // nuevos modulos
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -75,7 +80,9 @@ import {TagModule} from "primeng/tag";
     MenubarModule,
     CascadeSelectModule,
     CalendarModule,
-    TagModule
+    TagModule,
+    DialogModule,
+    DropdownModule
   ],
   providers: [
     MessageService,

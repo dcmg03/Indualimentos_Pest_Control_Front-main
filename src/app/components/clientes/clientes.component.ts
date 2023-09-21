@@ -1,7 +1,12 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,ViewChild} from '@angular/core';
 import {Cliente} from '../agregarcliente/cliente.model';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ClienteService} from './cliente.service';
+
+import { AuthService } from 'src/app/services/auth.service';
+import { ToastComponent } from '../toast/toast.component';
+import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-clientes',
@@ -14,24 +19,53 @@ export class ClientesComponent implements OnInit{
   editarClienteForm: FormGroup;
   items: any;
 
+
+
+  @ViewChild(ToastComponent) private toastComponent!: ToastComponent;
+
   constructor(
     private formBuilder: FormBuilder,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private authService: AuthService,
+    private apiService: ApiService
   ) {
-    this.items=[];
 
     this.editarClienteForm = this.formBuilder.group({
       id: [''],
       nombre: [''],
       apellido: [''],
       direccion: [''],
-      telefono: ['']
+      telefono: [''],
+      correo: [''],
     });
 
   }
   ngOnInit() {
     this.clientes=this.clienteService.obtenerClientes();
+    this.fetchData();
   }
+
+  visible: boolean = false;
+
+  showDialog() {
+      this.visible = true;
+  }
+
+  newUser={
+    name:'',
+    user: '',
+    correo: '',
+    direccion:'',
+    tipo:'C'
+  }
+
+  getUser: any = {
+    name:'',
+    role:'C',
+  };
+
+
+
 
   editarCliente(cliente: Cliente) {
     this.clienteEditado = cliente;
@@ -59,4 +93,65 @@ export class ClientesComponent implements OnInit{
      }
    }
 
+
+
+
+
+   fetchData() {
+    // Llama al método del servicio para obtener los datos
+
+    this.apiService.getAllByFilters("listoreUser", this.getUser).subscribe(
+      (response: any) => {
+        this.clientes = response;
+      },
+      (error: any) => {
+        // Maneja los errores aquí
+        console.error('Error al obtener datos:', error);
+      }
+    );
+  }
+
+
+   showToast(severity: string, detail: string) {
+    this.toastComponent.showToast(severity, detail);
+  }
+
+
+   agregar(){
+    console.log(this.newUser.name);
+    console.log(this.newUser.user);
+    console.log(this.newUser.correo);
+    console.log(this.newUser.direccion);
+    console.log(this.newUser.tipo);
+
+    this.authService.register({
+      credential: {
+        mail: this.newUser.correo,
+        userName: this.newUser.user
+      },
+      user: {
+        address: this.newUser.direccion,
+        name: this.newUser.name,
+        role: this.newUser.tipo
+      }
+    }).subscribe( res => {
+      this.showToast('success', 'Usuario registrado con éxito.');
+      this.visible = false;
+      this.newUser.name='';
+      this.newUser.user='';
+      this.newUser.correo='';
+      this.newUser.direccion='';
+      this.newUser.tipo='';
+
+
+    },
+    err => {
+      this.showToast('error', 'Error registrar usuario.');
+      console.error(err);
+    })
+   }
+
 }
+
+
+
