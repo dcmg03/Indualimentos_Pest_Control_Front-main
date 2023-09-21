@@ -63,6 +63,7 @@ import { MenubarComponent } from './components/menubar/menubar.component';
     ToastComponent,
     MenubarComponent,
 
+
   ],
   imports: [
     BrowserModule,

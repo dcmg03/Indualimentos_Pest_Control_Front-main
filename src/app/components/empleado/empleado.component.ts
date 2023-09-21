@@ -121,6 +121,7 @@ export class EmpleadoComponent {
       this.newUser.direccion='';
       this.newUser.tipo='';
 
+      this.fetchData();
 
     },
     (err:any) => {

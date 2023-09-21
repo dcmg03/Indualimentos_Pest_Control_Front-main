@@ -16,6 +16,7 @@ import { PasswordChangeComponent } from './components/password-change/password-c
 import {AgrEmpleadoComponent} from "./components/agr-empleado/agr-empleado.component";
 import {MenubarComponent} from "./components/menubar/menubar.component";
 
+
 const routes: Routes = [
 
   {path: 'login', component: LoginComponent},

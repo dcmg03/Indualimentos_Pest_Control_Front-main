@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiService {
   private readonly SAVEALL_ROUTE = "/createAll";
   private readonly DELETEALL_ROUTE = "/deleteAll";
 
-  private readonly API_URL = "http://localhost:7879/api/"
+  private readonly API_URL =  environment.apiUrl+"api/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -53,8 +54,8 @@ export class ApiService {
     return this.httpClient.put(this.API_URL + model + "/update", [body]); // Puedes pasar los datos a actualizar si es necesario
   }
 
-  public delete(model: string) {
-    return this.httpClient.delete(this.API_URL + model + "/delete");
+  public delete(model: string, id: string) {
+    return this.httpClient.delete(this.API_URL + model + `/delete?id=${id}`);
   }
 
   public createAll(model: string, body: []) {

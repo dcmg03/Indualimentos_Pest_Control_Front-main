@@ -118,11 +118,6 @@ export class ClientesComponent implements OnInit{
 
 
    agregar(){
-    console.log(this.newUser.name);
-    console.log(this.newUser.user);
-    console.log(this.newUser.correo);
-    console.log(this.newUser.direccion);
-    console.log(this.newUser.tipo);
 
     this.authService.register({
       credential: {
@@ -143,6 +138,7 @@ export class ClientesComponent implements OnInit{
       this.newUser.direccion='';
       this.newUser.tipo='';
 
+      this.fetchData();
 
     },
     err => {

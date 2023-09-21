@@ -4,31 +4,61 @@
     <div class="col-12">
       <p-table [value]="servicios" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Tipo de Servicio</th>
-          <th>Precio por Metro Cúbico</th>
-        </tr>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Creado por</th>
+            <th>Rol</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
+          </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-servicios>
-        <tr *ngFor="let servicio of servicios">
-          <td>{{ servicio.id }}</td>
-          <td>{{ servicio.nombre }}</td>
-          <td>{{ servicio.descripcion }}</td>
-          <td>{{ servicio.tipoServicio }}</td>
-          <td>{{ servicio.precioMetroCubico }}</td>
-        </tr>
+        <ng-template pTemplate="body" let-service>
+          <tr>
+            <td>{{ service.id }}</td>
+            <td>{{ service.name }}</td>
+            <td>{{ service.description }}</td>
+            <td>{{ service.user.name }}</td>
+            <td>{{ service.user.role }}</td>
+            <td>
+              <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
+            </td>
+            <td>
+              <p-button icon="pi pi-times" (click)="delete(service)" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+            </td>
+          </tr>
         </ng-template>
       </p-table>
 
 
-      <a routerLink='/agregarservicio'>
-        <button class="agservicio">Agregar Servicio</button>
+      <a class="center">
+        <button class="agservicio" (click)="showDialog(true)">Agregar Servicio</button>
       </a>
 
     </div>
   </div>
+  <p-dialog header="Agregar servicio" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <div class="contenedor">
+    <div>
+      <label for="name" class="texto">Nombre</label>
+      <input id="name" [(ngModel)]="newService.name"  type="text" placeholder="Nombre del servicio" pInputText class="titulos"
+        style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
 
+      <label for="user" class="texto">Descripción</label>
+      <input id="user" [(ngModel)]="newService.description" type="text" placeholder="Descripción del servicio" pInputText class="titulos"
+        style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
+
+
+
+      <div class="boton">
+        <p-button [label]="labelBoton" (click)="agregar()" styleClass="p-button-rounded p-button-secondary"></p-button>
+      </div>
+    </div>
+  </div>
+
+</p-dialog>
+<app-toast></app-toast>
 </div>
+
