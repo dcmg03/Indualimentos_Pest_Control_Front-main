@@ -15,6 +15,8 @@ export class ServiciosComponent implements OnInit {
   servicios: Servicio[] = [];
   tipoServicios: TipoServicio[] = [];
 
+  public serviceSelected: any;
+
   labelBoton: string = "Registrar";
 
   constructor(
@@ -37,13 +39,14 @@ export class ServiciosComponent implements OnInit {
     id: null as string | null,
     name: '',
     value: '',
-    service_id: {
+    service: {
 
     }
   }
 
   ngOnInit() {
     this.fetchData();
+    this.fetchDataKindOf();
   }
 
   visible: boolean = false;
@@ -84,13 +87,16 @@ export class ServiciosComponent implements OnInit {
 
 
   agregarTipoServicio(){
-    this.apiService.create("tipoService", this.newTipoService).subscribe(res =>{
-      this.fetchData();
+    this.newTipoService.service = {
+      id: this.serviceSelected.id
+    };
+    this.apiService.create("kindOfService", this.newTipoService).subscribe(res =>{
+      this.fetchDataKindOf();
       this.visible = false;
       this.newTipoService.id = null;
       this.newTipoService.name = '';
       this.newTipoService.value= '';
-      this.newTipoService.service_id = '';
+      this.newTipoService.service = '';
       this.showToast("success", "Accion realizada correctamente");
     }, error => {
       this.showToast("error", "Error en la accion del servicio");
@@ -109,11 +115,31 @@ export class ServiciosComponent implements OnInit {
     );
   }
 
+  fetchDataKindOf(){
+    this.apiService.getAll("kindOfService").subscribe(
+      (response: any) => {
+        this.tipoServicios = response;
+      },
+      (error) => {
+        this.showToast("error", "Error al obtener servicios: " + error);
+      }
+    );
+  }
+
 
   delete(service: Servicio) {
     this.apiService.delete("service", service.id).subscribe(res => {
       this.showToast("success", "Servicio eliminado correctamente");
       this.fetchData();
+    }, error => {
+      this.showToast("error", "Error al eliminar servicio");
+    });
+  }
+
+  deleteKindOf(service: any) {
+    this.apiService.delete("kindOfService", service.id).subscribe(res => {
+      this.showToast("success", "Servicio eliminado correctamente");
+      this.fetchDataKindOf();
     }, error => {
       this.showToast("error", "Error al eliminar servicio");
     });

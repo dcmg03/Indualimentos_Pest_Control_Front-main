@@ -1,20 +1,49 @@
 <app-menubar></app-menubar>
 <div class="global">
-  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <div
+    class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
+  >
     <div class="col-12">
       <div class="titulo">
         <span class="text-600 font-medium">Agenda del Día</span>
       </div>
-      <p-calendar class="calendario" [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
+      <div>
+        <span class="p-float-label">
+          <p-dropdown
+            [options]="servicios"
+            (ngModelChange)="changeOptions($event)"
+            [(ngModel)]="servicioSeleccionado"
+            placeholder="Selecciona servicio"
+            optionLabel="name"
+            optionValue="id"
+            inputId="float-label"
+          ></p-dropdown>
+          <label for="float-label">Selecciona servicio</label>
+        </span>
+        <span class="p-float-label">
+          <p-dropdown
+            [options]="tipoServicios"
+            [(ngModel)]="tipoServicioSeleccionado"
+            placeholder="Selecciona tipo de servicio"
+            optionLabel="name"
+            optionValue="id"
+            inputId="float-label"
+          ></p-dropdown>
+          <label for="float-label">Selecciona tipo de servicio</label>
+        </span>
+        <span class="p-float-label">
+          <p-dropdown
+            [options]="availableHours"
+            [(ngModel)]="selectedHours"
+            placeholder="Selecciona horas"
+            optionLabel="name"
+            optionValue="id"
+            inputId="float-label"
+          ></p-dropdown>
+          <label for="float-label">Seleccionar horas</label>
+        </span>
 
-      <div *ngFor="let servicio of programacion">
-        <div class="servicio">
-          <p>{{ servicio.hora }} - {{ servicio.nombre }}</p>
-          <button (click)="cancelarServicio(servicio)">Cancelar</button>
-        </div>
       </div>
-
     </div>
   </div>
 </div>
-
