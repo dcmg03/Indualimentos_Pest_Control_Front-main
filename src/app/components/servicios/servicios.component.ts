@@ -14,6 +14,7 @@ export class ServiciosComponent implements OnInit {
 
   servicios: Servicio[] = [];
   tipoServicios: TipoServicio[] = [];
+  role: any
 
   public serviceSelected: any;
 
@@ -45,6 +46,7 @@ export class ServiciosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.role = localStorage.getItem("role");
     this.fetchData();
     this.fetchDataKindOf();
   }

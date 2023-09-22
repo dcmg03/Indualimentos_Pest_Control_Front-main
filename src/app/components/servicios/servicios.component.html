@@ -32,7 +32,7 @@
       </p-table>
 
       <a class="center">
-        <button class="agservicio" (click)="showDialog(true, 0)">Agregar Servicio</button>
+        <button class="agservicio" (click)="showDialog(true, 0)" *ngIf="role !== 'C'">Agregar Servicio</button>
       </a>
 
 
