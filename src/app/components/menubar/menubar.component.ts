@@ -48,8 +48,8 @@ export class MenubarComponent {
         {
           label: 'Empleados', icon: 'pi pi-users',
           items: [
-            { label: 'Ver Empleados', icon: 'pi pi-verempleado', routerLink: '/verempleado' },
-            { label: 'Agregar Empleado', icon: 'pi pi-agempleado', routerLink: '/agregarempleado' }
+            { label: 'Ver Empleados', icon: 'pi pi-verempleado', routerLink: '/empleado' },
+            //{ label: 'Agregar Empleado', icon: 'pi pi-agempleado', routerLink: '/agregarempleado' }
           ]
         },
         {
