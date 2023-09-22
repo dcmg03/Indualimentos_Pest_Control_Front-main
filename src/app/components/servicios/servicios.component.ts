@@ -12,10 +12,9 @@ export class ServiciosComponent implements OnInit {
   role:any
   @ViewChild(ToastComponent) private toastComponent!: ToastComponent;
 
-
   servicios: Servicio[] = [];
   tipoServicios: TipoServicio[] = [];
-  role: any
+
 
   public serviceSelected: any;
 
