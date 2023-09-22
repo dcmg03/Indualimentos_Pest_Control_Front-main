@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ToastComponent } from '../toast/toast.component';
-import { Servicio } from './servicio.model';
+import { Servicio, TipoServicio } from './servicio.model';
 
 @Component({
   selector: 'app-servicios',
@@ -13,6 +13,7 @@ export class ServiciosComponent implements OnInit {
 
 
   servicios: Servicio[] = [];
+  tipoServicios: TipoServicio[] = [];
 
   labelBoton: string = "Registrar";
 
@@ -32,21 +33,34 @@ export class ServiciosComponent implements OnInit {
     }
   }
 
+  newTipoService = {
+    id: null as string | null,
+    name: '',
+    value: '',
+    service_id: {
+
+    }
+  }
+
   ngOnInit() {
     this.fetchData();
   }
 
-
-
   visible: boolean = false;
+  visible2: boolean = false;
 
-  showDialog(clear: boolean = false) {
+  showDialog(clear: boolean = false, popupNumber: number) {
     if (clear) {
       this.labelBoton = "Registrar";
       this.newService.name = '';
       this.newService.description = '';
     }
-    this.visible = true;
+    if(popupNumber === 0){
+      this.visible = true;
+    } else {
+      this.visible2 = true;
+    }
+
   }
 
   showToast(severity: string, detail: string) {
@@ -66,7 +80,21 @@ export class ServiciosComponent implements OnInit {
     }, error => {
       this.showToast("error", "Error en la accion del servicio");
     });
+  }
 
+
+  agregarTipoServicio(){
+    this.apiService.create("tipoService", this.newTipoService).subscribe(res =>{
+      this.fetchData();
+      this.visible = false;
+      this.newTipoService.id = null;
+      this.newTipoService.name = '';
+      this.newTipoService.value= '';
+      this.newTipoService.service_id = '';
+      this.showToast("success", "Accion realizada correctamente");
+    }, error => {
+      this.showToast("error", "Error en la accion del servicio");
+    });
   }
 
 
@@ -100,9 +128,7 @@ export class ServiciosComponent implements OnInit {
     this.newService.name = service.name;
     this.newService.description = service.description;
 
-    this.showDialog(false);
-
-
+    //this.showDialog(false);
   }
 
 }

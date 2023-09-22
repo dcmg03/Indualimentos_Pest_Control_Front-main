@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServicioService {
   private servicios: any[] = [];
+  private tipoServicio: any[] = [];
 
   constructor() {
     // Puedes inicializar el arreglo de servicios aquí si es necesario
@@ -22,5 +23,10 @@ export class ServicioService {
     this.servicios.push(nuevoServicio);
   }
 
+
+  // Método para agregar un nuevo tipo servicio
+  agregarTipoServicio(nuevoTipoServicio: any): void{
+    this.tipoServicio.push(nuevoTipoServicio);
+  }
   // Otros métodos para actualizar, eliminar o realizar operaciones con servicios según tus necesidades
 }

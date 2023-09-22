@@ -6,3 +6,10 @@ export interface Servicio {
   creado_por: string;
   rol: string;
 }
+
+export interface TipoServicio{
+  id: string;
+  name: string;
+  value: string;
+  service_id: string;
+}
