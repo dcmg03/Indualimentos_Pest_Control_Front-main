@@ -32,7 +32,7 @@
       </p-table>
 
       <a class="center">
-        <button class="agservicio" (click)="showDialog(true, 0)">Agregar Servicio</button>
+       <button class="agservicio" (click)="showDialog(true, 0)" *ngIf="role !== 'C'">Agregar Servicio</button>
       </a>
 
 
@@ -66,7 +66,7 @@
       </p-table>
 
       <a *ngIf="serviceSelected" class="center">
-        <button class="agservicio" (click)="showDialog(true, 1)">Agregar Tipo Servicio</button>
+        <button class="agservicio" (click)="showDialog(true, 1)" *ngIf="role !== 'C'">Agregar Tipo Servicio</button>
       </a>
 
     </div>
