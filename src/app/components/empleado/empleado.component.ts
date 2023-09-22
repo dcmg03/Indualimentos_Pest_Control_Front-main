@@ -1,9 +1,11 @@
 import {Component,OnInit,ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
-import {Cliente} from '../agregarcliente/cliente.model';
+import {Empleado} from '../agr-empleado/empleado.model';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastComponent } from '../toast/toast.component';
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {EmpleadoService} from './empleado.service'
 
 @Component({
   selector: 'app-empleado',
@@ -11,46 +13,35 @@ import { ToastComponent } from '../toast/toast.component';
   styleUrls: ['./empleado.component.css']
 })
 export class EmpleadoComponent {
-
-
+  empleados: Empleado[]=[];
+  empleadoEditado: Empleado | null = null;
+  editarEmpleadoForm: FormGroup;
   items: any;
-  clientes: Cliente[]=[];
-
 
   @ViewChild(ToastComponent) private toastComponent!: ToastComponent;
 
 
-  constructor(private router: Router,private apiService: ApiService,  private authService: AuthService,) {
-    this.items=[
-      { label: 'Inicio', icon: 'pi pi-home', routerLink: '/inicio' },
-      {
-        label: 'Servicios',
-        icon: 'pi pi-briefcase',
-        items: [
-          { label: 'Ver Servicios', icon: 'pi pi-list', routerLink: '/ver-servicios' },
-          { label: 'Agregar Servicios', icon: 'pi pi-plus', routerLink: '/agregar-servicios' }
-        ]
-      },
-      { label: 'Clientes', icon: 'pi pi-users', routerLink: '/clientes' },
-      { label: 'Agenda', icon: 'pi pi-calendar', routerLink: '/agenda' }
-    ];
-  }
+  constructor(
+    private router: Router,
+    private apiService: ApiService,
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private empleadoService: EmpleadoService
+    ) {
 
-  verServicios(){
-    this.router.navigate(['/servicios'])
+      this.editarEmpleadoForm = this.formBuilder.group({
+        id: [''],
+        nombre: [''],
+        apellido: [''],
+        direccion: [''],
+        telefono: [''],
+        correo: [''],
+      });
 
   }
-  verAgenda(){
-    this.router.navigate(['/agenda'])
-  }
-  verClientes(){
-    this.router.navigate(['/clientes'])
-  }
-
-
 
   ngOnInit() {
-
+    this.empleados=this.empleadoService.obtenerEmpleados();
     this.fetchData();
   }
 
@@ -73,6 +64,31 @@ export class EmpleadoComponent {
     role:'E',
   };
 
+  editarCliente(empleado: Empleado) {
+    this.empleadoEditado = empleado;
+    this.editarEmpleadoForm.patchValue(empleado);
+  }
+   guardarCambios() {
+     if (this.empleadoEditado) {
+       // 3. Escuchar los cambios realizados en el formulario de edición.
+       // Los datos editados se encuentran en this.editarClienteForm.value.
+
+       // 4. Cuando el usuario confirma los cambios, actualiza el cliente en la fuente de datos.
+       this.empleadoService.actualizarEmpleado(this.editarEmpleadoForm.value)
+         .subscribe((clienteActualizado) => {
+           // 5. Después de la edición, actualiza la lista de clientes en tu componente para reflejar los cambios.
+           // Actualiza el cliente en la lista de clientes con los datos actualizados.
+           const index = this.empleados.findIndex(c => c.id === clienteActualizado.id);
+           if (index !== -1) {
+             this.empleados[index] = clienteActualizado;
+           }
+
+           // Limpia el formulario y restablece la variable clienteEditado.
+           this.editarEmpleadoForm.reset();
+           this.empleadoEditado = null;
+         });
+     }
+   }
 
 
   fetchData() {
@@ -80,7 +96,7 @@ export class EmpleadoComponent {
 
     this.apiService.getAllByFilters("listoreUser", this.getUser).subscribe(
       (response: any) => {
-        this.clientes = response;
+        this.empleados = response;
       },
       (error: any) => {
         // Maneja los errores aquí
@@ -88,7 +104,6 @@ export class EmpleadoComponent {
       }
     );
   }
-
 
    showToast(severity: string, detail: string) {
     this.toastComponent.showToast(severity, detail);
@@ -102,7 +117,7 @@ export class EmpleadoComponent {
     console.log(this.newUser.direccion);
     console.log(this.newUser.tipo);
 
-    this.authService.register({
+    this.authService.registerUser({
       credential: {
         mail: this.newUser.correo,
         userName: this.newUser.user

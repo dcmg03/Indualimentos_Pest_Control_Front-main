@@ -5,29 +5,25 @@
     <div class="col-12">
 
       <!-- Utiliza el componente p-table de PrimeNG -->
-      <p-table [value]="clientes" [paginator]="true" [rows]="10">
+      <p-table [value]="empleados" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Apellido</th>
             <th>Dirección</th>
-            <th>Teléfono</th>
             <th>Correo</th>
 
 
           </tr>
         </ng-template>
 
-        <ng-template pTemplate="body" let-cliente>
+        <ng-template pTemplate="body" let-empleado>
 
           <tr>
-            <td>{{ cliente.id }}</td>
-            <td>{{ cliente.name }}</td>
-            <td>{{ cliente.apellido }}</td>
-            <td>{{ cliente.address }}</td>
-            <td>{{ cliente.telefono }}</td>
-            <td>{{ cliente.credential.mail }}</td>
+            <td>{{ empleado.id }}</td>
+            <td>{{ empleado.name }}</td>
+            <td>{{ empleado.address }}</td>
+            <td>{{ empleado.credential.mail }}</td>
 
           </tr>
         </ng-template>
@@ -58,9 +54,6 @@
         <label for="direccion" class="texto">Direccion</label>
         <input id="direccion" [(ngModel)]="newUser.direccion" type="text" placeholder="Direccion" pInputText
           class="titulos" style="padding:1rem" required>
-
-
-
 
         <div class="boton">
           <p-button label="registrar" (click)="agregar()" styleClass="p-button-rounded p-button-secondary"></p-button>

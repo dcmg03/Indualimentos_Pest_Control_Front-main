@@ -24,6 +24,10 @@ export class AuthService {
     return this.httpClient.post(this.API_URL+"auth/register", registerUser);
   }
 
+  public registerUser(registerUser: any) {
+    return this.httpClient.post(this.API_URL+"auth/registerUser", registerUser);
+  }
+
   public changePassword(registerWorker: any) {
 
     return this.httpClient.post(this.API_URL+"auth/enableUser", registerWorker);

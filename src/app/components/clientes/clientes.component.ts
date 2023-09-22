@@ -113,16 +113,14 @@ export class ClientesComponent implements OnInit{
 
    agregar(){
 
-    this.authService.register({
+    this.authService.registerUser({
+      address: this.newUser.direccion,
+        name: this.newUser.name,
+        role: this.newUser.tipo,
       credential: {
         mail: this.newUser.correo,
         userName: this.newUser.user
       },
-      user: {
-        address: this.newUser.direccion,
-        name: this.newUser.name,
-        role: this.newUser.tipo
-      }
     }).subscribe( res => {
       this.showToast('success', 'Usuario registrado con éxito.');
       this.visible = false;
