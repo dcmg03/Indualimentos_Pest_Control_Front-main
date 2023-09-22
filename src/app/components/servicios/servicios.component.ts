@@ -9,6 +9,7 @@ import { Servicio, TipoServicio } from './servicio.model';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit {
+  role:any
   @ViewChild(ToastComponent) private toastComponent!: ToastComponent;
 
 
@@ -50,6 +51,7 @@ export class ServiciosComponent implements OnInit {
     this.fetchData();
     this.fetchDataKindOf();
   }
+
 
   visible: boolean = false;
   visible2: boolean = false;
@@ -128,7 +130,6 @@ export class ServiciosComponent implements OnInit {
     );
   }
 
-
   delete(service: Servicio) {
     this.apiService.delete("service", service.id).subscribe(res => {
       this.showToast("success", "Servicio eliminado correctamente");
@@ -158,6 +159,8 @@ export class ServiciosComponent implements OnInit {
 
     //this.showDialog(false);
   }
+
+
 
 }
 
