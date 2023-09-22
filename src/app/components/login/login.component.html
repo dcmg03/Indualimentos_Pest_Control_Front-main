@@ -3,6 +3,7 @@
   <div class="flex flex-column align-items-center justify-content-center">
     <div class="titulo">
       <span class="text-600 font-medium">Ingresar</span>
+      <img src="assets/layout/images/logoc.png" class="logo">
     </div>
     <div class="contenedor">
         <div>
@@ -16,7 +17,9 @@
           <div class="contraseñaOlvidar">
             <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidaste tu contraseña?</a>
           </div>
-          <button pButton pRipple label="Ingresar" class="boton" (click)="login()"></button>
+          <div class="boton">
+            <p-button label="Ingresar" styleClass="p-button-rounded p-button-secondary" (click)="login()"></p-button>
+          </div>
         </div>
       </div>
   </div>
