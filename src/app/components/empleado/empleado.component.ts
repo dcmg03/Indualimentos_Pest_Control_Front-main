@@ -117,7 +117,7 @@ export class EmpleadoComponent {
     console.log(this.newUser.direccion);
     console.log(this.newUser.tipo);
 
-    this.authService.registerUser({
+    this.authService.register({
       credential: {
         mail: this.newUser.correo,
         userName: this.newUser.user
