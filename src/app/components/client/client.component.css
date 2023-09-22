@@ -1,0 +1,47 @@
+:host ::ng-deep .global{
+  width: 100%;
+  max-width: 100em;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.product-image {
+  width: 12em;
+  height: 12em;
+  box-sizing: border-box;
+}
+
+/* Fondo */
+:host ::ng-deep body, :host ::ng-deep html {
+  overflow: hidden;
+}
+
+:host ::ng-deep .surface-ground {
+  background-image: url("src/assets/layout/images/fondo.jpg")!important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/*Imagenes*/
+:host ::ng-deep .logo{
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  left: 2%;
+  top: 3%;
+}
+
+.titulo{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+
+
