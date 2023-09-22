@@ -2,7 +2,7 @@
 <div class="global">
   <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
     <div class="col-12">
-      <p-table [value]="servicios" [paginator]="true" [rows]="10">
+      <p-table [value]="servicios" selectionMode="single" [(selection)]="serviceSelected" dataKey="id" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
           <tr>
             <th>ID</th>
@@ -15,7 +15,7 @@
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-service>
-          <tr>
+          <tr [pSelectableRow]="service">
             <td>{{ service.id }}</td>
             <td>{{ service.name }}</td>
             <td>{{ service.description }}</td>
@@ -35,13 +35,17 @@
         <button class="agservicio" (click)="showDialog(true, 0)">Agregar Servicio</button>
       </a>
 
-      <p-table [value]="tipoServicios" [paginator]="true" [rows]="10">
+
+      <div>
+        <h3>{{serviceSelected?.name}} - {{serviceSelected?.description}}</h3>
+      </div>
+
+      <p-table [value]="tipoServicios"  [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
           <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Valor</th>
-            <th>Service_id</th>
             <th>Actualizar</th>
             <th>Eliminar</th>
           </tr>
@@ -50,19 +54,18 @@
           <tr>
             <td>{{ service.id }}</td>
             <td>{{ service.name }}</td>
-            <td>{{ service.valor }}</td>
-            <td>{{ service.service.service_id }}</td>
+            <td>{{ service.value }}</td>
             <td>
               <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
             </td>
             <td>
-              <p-button icon="pi pi-times" (click)="delete(service)" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+              <p-button icon="pi pi-times" (click)="deleteKindOf(service)" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
             </td>
           </tr>
         </ng-template>
       </p-table>
 
-      <a class="center">
+      <a *ngIf="serviceSelected" class="center">
         <button class="agservicio" (click)="showDialog(true, 1)">Agregar Tipo Servicio</button>
       </a>
 
@@ -91,10 +94,6 @@
   [draggable]="false" [resizable]="false">
   <div class="contenedor">
     <div>
-      <label for="id" class="texto">Id</label>
-      <input id="id" [(ngModel)]="newTipoService.id"  type="text" placeholder="Id del servicio" pInputText class="titulos"
-        style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
-
       <label for="name" class="texto">Nombre</label>
       <input id="name" [(ngModel)]="newTipoService.name"  type="text" placeholder="Nombre del servicio" pInputText class="titulos"
         style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
@@ -103,12 +102,8 @@
       <input id="value" [(ngModel)]="newTipoService.value" type="text" placeholder="Valor del servicio" pInputText class="titulos"
         style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
 
-      <label for="service_id" class="texto">Service_id</label>
-      <input id="service_id" [(ngModel)]="newTipoService.value" type="text" placeholder="Servicio id" pInputText class="titulos"
-        style="padding:1rem" required ng-pattern="/^\w+(\s\w`)`$/">
-
       <div class="boton">
-        <p-button [label]="labelBoton" (click)="agregar()" styleClass="p-button-rounded p-button-secondary"></p-button>
+        <p-button [label]="labelBoton" (click)="agregarTipoServicio()" styleClass="p-button-rounded p-button-secondary"></p-button>
       </div>
     </div>
   </div>
