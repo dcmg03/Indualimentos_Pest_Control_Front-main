@@ -19,6 +19,7 @@ import { EmpComponent } from './components/emp/emp.component';
 import { ClientComponent } from './components/client/client.component';
 
 
+
 const routes: Routes = [
 
   {path: 'login', component: LoginComponent},

@@ -19,7 +19,7 @@ export class MenubarComponent {
 
     if (this.role === "E") {
       this.items = [
-        { label: 'Inicio', icon: 'pi pi-home', routerLink: '/admin' },
+        { label: 'Inicio', icon: 'pi pi-home', routerLink: '/empleadoo' },
         {
           label: 'Servicios',
           icon: 'pi pi-briefcase',
@@ -32,7 +32,7 @@ export class MenubarComponent {
 
     if (this.role === "C") {
       this.items = [
-        { label: 'Inicio', icon: 'pi pi-home', routerLink: '/admin' },
+        { label: 'Inicio', icon: 'pi pi-home', routerLink: '/client' },
         {
           label: 'Servicios',
           icon: 'pi pi-briefcase',
