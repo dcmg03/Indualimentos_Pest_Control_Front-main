@@ -1,13 +1,11 @@
 <app-menubar></app-menubar>
 <div class="global">
-  <div
-    class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
-  >
+  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
     <div class="col-12">
       <div class="titulo">
         <span class="text-600 font-medium">Agenda del Día</span>
       </div>
-      <div>
+      <div style="text-align: center;">
         <span class="p-float-label">
           <p-dropdown
             [options]="servicios"
@@ -20,6 +18,7 @@
           ></p-dropdown>
           <label for="float-label">Selecciona servicio</label>
         </span>
+
         <span class="p-float-label">
           <p-dropdown
             [options]="tipoServicios"
@@ -31,6 +30,7 @@
           ></p-dropdown>
           <label for="float-label">Selecciona tipo de servicio</label>
         </span>
+
         <span class="p-float-label">
           <p-dropdown
             [options]="availableHours"
@@ -42,8 +42,8 @@
           ></p-dropdown>
           <label for="float-label">Seleccionar horas</label>
         </span>
-
       </div>
+
     </div>
   </div>
 </div>
