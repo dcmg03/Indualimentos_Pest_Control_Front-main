@@ -15,6 +15,8 @@ import {AgregarclienteComponent} from "./components/agregarcliente/agregarclient
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import {AgrEmpleadoComponent} from "./components/agr-empleado/agr-empleado.component";
 import {MenubarComponent} from "./components/menubar/menubar.component";
+import { EmpComponent } from './components/emp/emp.component';
+import { ClientComponent } from './components/client/client.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
   {path: 'passwordChange', component: PasswordChangeComponent},
   {path: 'agregarempleado', component:AgrEmpleadoComponent},
   {path: 'menubar', component: MenubarComponent},
+  {path: 'empleadoo', component: EmpComponent},
+  {path: 'cliente', component: ClientComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'homePage'}
 
 

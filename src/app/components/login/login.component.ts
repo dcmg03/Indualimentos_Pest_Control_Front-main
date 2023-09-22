@@ -30,7 +30,19 @@ export class LoginComponent {
         localStorage.setItem(key, (res[key]));
       }
 
-      this.router.navigate(['/admin']);
+      if(res.role==="A"){
+        this.router.navigate(['/admin']);
+      }
+
+      if(res.role==="C"){
+        this.router.navigate(['cliente']);
+      }
+
+      if(res.role==="E"){
+        this.router.navigate(['/empleadoo']);
+      }
+
+
 
     })
   }
