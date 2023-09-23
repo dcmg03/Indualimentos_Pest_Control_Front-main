@@ -1,6 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {AgendaService} from './agenda.service';
 import { ApiService } from 'src/app/services/api.service';
+import { Agenda } from './agenda.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { ToastComponent } from '../toast/toast.component';
+
 
 @Component({
   selector: 'app-agenda',
@@ -8,8 +13,11 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./agenda.component.css']
 })
 export class AgendaComponent implements OnInit {
+  agenda:Agenda[] = [];
   programacion: any[]=[];
   date:any;
+  formGroup: FormGroup;
+  items: any;
 
   public servicios = [];
   public servicioSeleccionado: any;
@@ -20,14 +28,43 @@ export class AgendaComponent implements OnInit {
   public availableHours: any[] = [];
   public selectedHours: any;
 
-  constructor(private agendaService: AgendaService, private apiService: ApiService) {}
+
+  constructor(
+    private agendaService: AgendaService,
+    private apiService: ApiService,
+    private formBuilder: FormBuilder) {
+    this.formGroup = this.formBuilder.group({
+      date: [null], // El FormControl para el campo "date"
+    });
+  }
 
   ngOnInit() {
+    this.agenda=this.agendaService.obtenerAgenda();
+    this.fetchData();
     this.generateAvailableHours();
     this.apiService.getAll("service").subscribe(res => {
       this.servicios = res as []
     });
   }
+
+  visible: boolean = false;
+
+  showDialog() {
+      this.visible = true;
+  }
+
+  newAgenda={
+    fecha:'',
+    id: '',
+    nombre:'',
+    correo: ''
+  }
+
+  getUser: any = {
+    name:'',
+    role:'C',
+  };
+
 
   private generateAvailableHours() {
     let hour = 8;
@@ -57,4 +94,22 @@ export class AgendaComponent implements OnInit {
   cancelarServicio(servicio: any) {
     this.agendaService.cancelarServicio(servicio.id);
   }
+
+  fetchData() {
+    // Llama al método del servicio para obtener los datos
+
+    this.apiService.getAllByFilters("listoreUser", this.getUser).subscribe(
+      (response: any) => {
+        this.agenda = response;
+      },
+      (error: any) => {
+        // Maneja los errores aquí
+        console.error('Error al obtener datos:', error);
+      }
+    );
+  }
+
+
+
+
 }
