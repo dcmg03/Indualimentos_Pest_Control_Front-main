@@ -8,8 +8,8 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>Creado por</th>
-            <th>Rol</th>
+            <th *ngIf="role !== 'C'">Creado por</th>
+            <th *ngIf="role !== 'C'">Rol</th>
             <th *ngIf="role !== 'C'">Actualizar</th>
             <th *ngIf="role !== 'C'">Eliminar</th>
           </tr>
@@ -19,8 +19,8 @@
             <td>{{ service.id }} </td>
             <td>{{ service.name }}</td>
             <td>{{ service.description }}</td>
-            <td>{{ service.user.name }}</td>
-            <td>{{ service.user.role }}</td>
+            <td *ngIf="role !== 'C'">{{ service.user.name }}</td>
+            <td *ngIf="role !== 'C'">{{ service.user.role }}</td>
             <td *ngIf="role !== 'C'">
               <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined" *ngIf="role !== 'C'"></p-button>
             </td>

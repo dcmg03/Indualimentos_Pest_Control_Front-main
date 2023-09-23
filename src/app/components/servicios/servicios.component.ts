@@ -106,7 +106,6 @@ export class ServiciosComponent implements OnInit {
     });
   }
 
-
   fetchData() {
     this.apiService.getAll("service").subscribe(
       (response: any) => {
