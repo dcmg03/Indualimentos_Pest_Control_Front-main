@@ -150,6 +150,8 @@ export class ServiciosComponent implements OnInit {
 
   update(service: Servicio) {
 
+    console.log("Método update llamado");
+
     this.labelBoton = "Actualizar";
 
     this.newService.id = service.id;
