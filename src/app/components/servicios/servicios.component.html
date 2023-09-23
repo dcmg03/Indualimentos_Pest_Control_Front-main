@@ -10,22 +10,22 @@
             <th>Descripción</th>
             <th>Creado por</th>
             <th>Rol</th>
-            <th>Actualizar</th>
-            <th>Eliminar</th>
+            <th *ngIf="role !== 'C'">Actualizar</th>
+            <th *ngIf="role !== 'C'">Eliminar</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-service>
           <tr [pSelectableRow]="service">
-            <td>{{ service.id }}</td>
+            <td>{{ service.id }} </td>
             <td>{{ service.name }}</td>
             <td>{{ service.description }}</td>
             <td>{{ service.user.name }}</td>
             <td>{{ service.user.role }}</td>
-            <td>
-              <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
+            <td *ngIf="role !== 'C'">
+              <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined" *ngIf="role !== 'C'"></p-button>
             </td>
-            <td>
-              <p-button icon="pi pi-times" (click)="delete(service)" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+            <td *ngIf="role !== 'C'">
+              <p-button icon="pi pi-times" (click)="delete(service)" styleClass="p-button-rounded p-button-danger p-button-outlined" *ngIf="role !== 'C'"></p-button>
             </td>
           </tr>
         </ng-template>
@@ -46,8 +46,8 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Valor</th>
-            <th>Actualizar</th>
-            <th>Eliminar</th>
+            <th *ngIf="role !== 'C'">Actualizar</th>
+            <th *ngIf="role !== 'C'">Eliminar</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-service>
@@ -55,11 +55,11 @@
             <td>{{ service.id }}</td>
             <td>{{ service.name }}</td>
             <td>{{ service.value }}</td>
-            <td>
-              <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
+            <td *ngIf="role !== 'C'">
+              <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined" *ngIf="role !== 'C'"></p-button>
             </td>
-            <td>
-              <p-button icon="pi pi-times" (click)="deleteKindOf(service)" styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+            <td *ngIf="role !== 'C'">
+              <p-button icon="pi pi-times" (click)="deleteKindOf(service)" styleClass="p-button-rounded p-button-danger p-button-outlined" *ngIf="role !== 'C'"></p-button>
             </td>
           </tr>
         </ng-template>
