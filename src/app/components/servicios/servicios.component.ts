@@ -125,7 +125,7 @@ export class ServiciosComponent implements OnInit {
     );
   }
 
-  fetchDataKindOf() {
+  fetchDataKindOf(){
     this.apiService.getAll("kindOfService").subscribe(
       (response: any) => {
 
@@ -134,7 +134,7 @@ export class ServiciosComponent implements OnInit {
           name: item.name,
           value: item.value,
           service_id: item.service.id,
-          service_name: item.service.name,
+          service_name: item.service.name, // Asigna el valor de service_name desde item.service.name
         }));
 
 
@@ -144,7 +144,6 @@ export class ServiciosComponent implements OnInit {
       }
     );
   }
-
 
   delete(service: Servicio) {
     this.apiService.delete("service", service.id).subscribe(res => {
@@ -182,13 +181,15 @@ export class ServiciosComponent implements OnInit {
 
    updateKindOf(tipoServicio: any) {
 
+    console.log(tipoServicio);
+
 
     this.labelBoton = "Actualizar Tipo de Servicio";
 
     this.newTipoService.id = tipoServicio.id;
     this.newTipoService.name = tipoServicio.name;
     this.newTipoService.value= tipoServicio.value;
-    this.newTipoService.service.id = tipoServicio.service.id;
+    this.newTipoService.service.id = tipoServicio.service_id;
 
     this.visible2 = true;
 
