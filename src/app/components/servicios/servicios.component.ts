@@ -128,7 +128,7 @@ export class ServiciosComponent implements OnInit {
   fetchDataKindOf() {
     this.apiService.getAll("kindOfService").subscribe(
       (response: any) => {
-        
+
         this.tipoServicios = response.map((item: any) => ({
           id: item.id,
           name: item.name,
@@ -175,11 +175,12 @@ export class ServiciosComponent implements OnInit {
 
     this.visible = true;
 
+
     //this.showDialog(false);
   }
 
 
-  updateKindOf(tipoServicio: any) {
+   updateKindOf(tipoServicio: any) {
 
 
     this.labelBoton = "Actualizar Tipo de Servicio";
