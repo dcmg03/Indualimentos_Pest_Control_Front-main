@@ -26,9 +26,7 @@ export class ClienteService {
 
 
 // Método para actualizar un cliente
-  actualizarCliente(clienteActualizado
-                      :
-                      Cliente
+  actualizarCliente(clienteActualizado:Cliente
   ):
     Observable<Cliente> {
     const index = this.clientes.findIndex(c => c.id === clienteActualizado.id);

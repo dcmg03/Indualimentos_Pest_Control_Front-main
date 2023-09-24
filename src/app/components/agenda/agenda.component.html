@@ -4,8 +4,11 @@
     <div class="col-12">
       <div class="titulo">
         <span class="text-600 font-medium">Agenda del Día</span>
-      </div>
+      </div><br><br>
       <div style="text-align: center;">
+
+        <p-calendar [(ngModel)]="date"></p-calendar>
+
         <span class="p-float-label">
           <p-dropdown
             [options]="servicios"
@@ -43,6 +46,31 @@
           <label for="float-label">Seleccionar horas</label>
         </span>
       </div>
+      <br><br>
+
+      <br>
+      <p-table [value]="agenda" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Fecha</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-agenda>
+
+          <tr>
+            <td>{{ agenda.asigned_date }}</td>
+            <td>{{ agenda.id }}</td>
+            <td>{{ agenda.name }}</td>
+            <td>{{ agenda.address }}</td>
+
+          </tr>
+        </ng-template>
+      </p-table>
+
 
     </div>
   </div>

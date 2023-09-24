@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import {Agenda} from '../agenda/agenda.model';
+import {Observable, of, throwError} from 'rxjs'; // Importa throwError en lugar de throw
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +12,35 @@ export class AgendaService {
     { id: 2, hora: '11:00 AM', nombre: 'Servicio 2', cancelado: false },
     // Agrega más servicios y datos aquí
   ];
+
+  private agenda: Agenda[] = []
+
+  obtenerAgenda(){
+    return this.agenda
+  }
+
+  agregarAgenda(nuevaAgenda: {
+    fecha: string;
+    id: null;
+    nombre: string;
+    address: string;
+  }) {
+  this.agenda.push(<Agenda>nuevaAgenda)
+  }
+
+  actualizarAgenda(AgendaActualzada:Agenda):
+  Observable<Agenda> {
+    const index = this.agenda.findIndex(c => c.id === AgendaActualzada.id);
+    if (index !== -1
+    ) {
+      // Actualiza el cliente en la lista de clientes
+      this.agenda[index] = {...this.agenda[index], ...AgendaActualzada};
+      return of(this.agenda[index]);
+    } else {
+      // Utiliza throwError para emitir un error observable
+      return throwError('Agenda no encontrado');
+    }
+  }
 
   obtenerProgramacionDelDia() {
     // Simplemente devuelve la programación del día
