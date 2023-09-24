@@ -37,7 +37,6 @@ export class MenubarComponent {
   ngOnInit() {
 
     this.role = localStorage.getItem("role");
-    console.log(this.role);
 
     if (this.role === "E") {
       this.items = [

@@ -24,7 +24,6 @@ export class AgregarclienteComponent {
   }
 
   agregarCliente() {
-    console.log(this.nuevoCliente);
     this.clienteService.agregarCliente(this.nuevoCliente);
     this.nuevoCliente = {
       user: '',

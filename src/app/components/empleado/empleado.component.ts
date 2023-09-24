@@ -111,12 +111,6 @@ export class EmpleadoComponent {
 
 
   agregar(){
-    console.log(this.newUser.name);
-    console.log(this.newUser.user);
-    console.log(this.newUser.correo);
-    console.log(this.newUser.direccion);
-    console.log(this.newUser.tipo);
-
     this.authService.register({
       credential: {
         mail: this.newUser.correo,

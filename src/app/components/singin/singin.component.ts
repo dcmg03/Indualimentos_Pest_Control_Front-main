@@ -24,33 +24,7 @@ export class SinginComponent {
 
 
 
-  singin(){
-    console.log(this.newUser.name);
-    console.log(this.newUser.user);
-    console.log(this.newUser.correo);
-    console.log(this.newUser.direccion);
-
-    this.authService.register({
-      credential: {
-        mail: "juliethbecerra33@gmail.com",
-        userName: this.newUser.user
-      },
-      user: {
-        address: this.newUser.direccion,
-        name: this.newUser.name,
-        role: "A"
-      }
-    }).subscribe(res => {
-      console.log(res);
-    })
-  }
-
   register(){
-    console.log(this.newUser.name);
-    console.log(this.newUser.user);
-    console.log(this.newUser.correo);
-    console.log(this.newUser.direccion);
-
 
    this.authService.register({
       credential: {
@@ -63,10 +37,7 @@ export class SinginComponent {
         role: "A"
       }
     }).subscribe((res:any) => {
-      console.log(res);
       if(res){
-
-
         this.router.navigate(['./passwordChange'], { queryParams: { token: res.temporalToken } });
       }
     })

@@ -45,6 +45,7 @@
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Servicio</th>
             <th>Valor</th>
             <th *ngIf="role !== 'C'">Actualizar</th>
             <th *ngIf="role !== 'C'">Eliminar</th>
@@ -54,9 +55,10 @@
           <tr>
             <td>{{ service.id }}</td>
             <td>{{ service.name }}</td>
+            <td>{{ service.service_name }}</td>
             <td>{{ service.value }}</td>
             <td *ngIf="role !== 'C'">
-              <p-button icon="pi pi-pencil" (click)="update(service)" styleClass="p-button-rounded p-button-help p-button-outlined" *ngIf="role !== 'C'"></p-button>
+              <p-button icon="pi pi-pencil" (click)="updateKindOf(service)" styleClass="p-button-rounded p-button-help p-button-outlined" *ngIf="role !== 'C'"></p-button>
             </td>
             <td *ngIf="role !== 'C'">
               <p-button icon="pi pi-times" (click)="deleteKindOf(service)" styleClass="p-button-rounded p-button-danger p-button-outlined" *ngIf="role !== 'C'"></p-button>

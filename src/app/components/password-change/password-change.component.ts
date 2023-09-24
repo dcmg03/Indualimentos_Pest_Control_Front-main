@@ -44,8 +44,6 @@ export class PasswordChangeComponent implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      console.log(this.token);
-
       if (this.toastComponent && this.token !== undefined && !this.toastComponentInitialized) {
         this.showToast('success', 'Usuario creado con éxito.');
         this.showToast('info', 'Revise el correo.');
@@ -85,8 +83,6 @@ export class PasswordChangeComponent implements OnInit {
     this.passwordToChange.password = this.newUser.passwordA;
     this.passwordToChange.code = this.newUser.code;
 
-    console.log(this.passwordToChange);
-
 
     this.authService.changePassword(this.passwordToChange).subscribe(
       res => {
@@ -98,10 +94,6 @@ export class PasswordChangeComponent implements OnInit {
         console.error(err);
       }
     );
-
-
-    console.log(this.token);
-
 
 
   }
