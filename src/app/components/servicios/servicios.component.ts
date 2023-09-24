@@ -125,11 +125,18 @@ export class ServiciosComponent implements OnInit {
     );
   }
 
-  fetchDataKindOf(){
+  fetchDataKindOf() {
     this.apiService.getAll("kindOfService").subscribe(
       (response: any) => {
-        this.tipoServicios = response;
-        //this.tipoServicios.service_name = response.service.name;
+        
+        this.tipoServicios = response.map((item: any) => ({
+          id: item.id,
+          name: item.name,
+          value: item.value,
+          service_id: item.service.id,
+          service_name: item.service.name,
+        }));
+
 
       },
       (error) => {
@@ -137,6 +144,7 @@ export class ServiciosComponent implements OnInit {
       }
     );
   }
+
 
   delete(service: Servicio) {
     this.apiService.delete("service", service.id).subscribe(res => {
