@@ -16,11 +16,7 @@ export class AgrEmpleadoComponent {
   }
 
   singin(){
-    console.log(this.newempleado.name);
-    console.log(this.newempleado.cedula);
-    console.log(this.newempleado.apellido);
-    console.log(this.newempleado.contacto);
-    console.log(this.newempleado.arl);
+
   }
 
   valCheck: string[] = ['remember'];

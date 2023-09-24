@@ -41,9 +41,10 @@ export class ServiciosComponent implements OnInit {
     name: '',
     value: '',
     service: {
+      id: null as string | null, // Agrega la propiedad 'id' aquí
+    },
+  };
 
-    }
-  }
 
   ngOnInit() {
     this.role = localStorage.getItem("role");
@@ -90,17 +91,24 @@ export class ServiciosComponent implements OnInit {
 
 
   agregarTipoServicio(){
+
+    if(this.newTipoService.service.id === null){
     this.newTipoService.service = {
       id: this.serviceSelected.id
     };
+  }
     this.apiService.create("kindOfService", this.newTipoService).subscribe(res =>{
       this.fetchDataKindOf();
       this.visible = false;
       this.newTipoService.id = null;
       this.newTipoService.name = '';
       this.newTipoService.value= '';
-      this.newTipoService.service = '';
+      this.newTipoService.service = {
+        id: null,
+      };
       this.showToast("success", "Accion realizada correctamente");
+      this.visible2 = false
+
     }, error => {
       this.showToast("error", "Error en la accion del servicio");
     });
@@ -120,10 +128,19 @@ export class ServiciosComponent implements OnInit {
   fetchDataKindOf(){
     this.apiService.getAll("kindOfService").subscribe(
       (response: any) => {
-        this.tipoServicios = response;
+
+        this.tipoServicios = response.map((item: any) => ({
+          id: item.id,
+          name: item.name,
+          value: item.value,
+          service_id: item.service.id,
+          service_name: item.service.name, // Asigna el valor de service_name desde item.service.name
+        }));
+
+
       },
       (error) => {
-        this.showToast("error", "Error al obtener servicios: " + error);
+        this.showToast("error", "Error al obtener Tipo de servicios: " + error);
       }
     );
   }
@@ -149,17 +166,34 @@ export class ServiciosComponent implements OnInit {
 
   update(service: Servicio) {
 
-    console.log("Método update llamado");
-
     this.labelBoton = "Actualizar";
 
     this.newService.id = service.id;
     this.newService.name = service.name;
     this.newService.description = service.description;
 
+    this.visible = true;
+
     //this.showDialog(false);
   }
 
+
+  updateKindOf(tipoServicio: any) {
+
+    console.log(tipoServicio);
+
+
+    this.labelBoton = "Actualizar Tipo de Servicio";
+
+    this.newTipoService.id = tipoServicio.id;
+    this.newTipoService.name = tipoServicio.name;
+    this.newTipoService.value= tipoServicio.value;
+    this.newTipoService.service.id = tipoServicio.service_id;
+
+    this.visible2 = true;
+
+    //this.showDialog(false);
+  }
 
 
 }

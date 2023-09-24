@@ -12,4 +12,5 @@ export interface TipoServicio{
   name: string;
   value: string;
   service_id: string;
+  service_name: string;
 }

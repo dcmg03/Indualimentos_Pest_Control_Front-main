@@ -18,13 +18,11 @@ export class LoginComponent {
 
 
   login(){
-    console.log(this.user.user);
-    console.log(this.user.password);
+
     this.authService.login({
       mail: this.user.user,
       password: this.user.password
     }).subscribe((res:any)=>{
-      console.log(res);
 
       for (const key of Object.keys(res)) {
         localStorage.setItem(key, (res[key]));
