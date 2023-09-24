@@ -15,17 +15,12 @@ export class AgendaService {
 
   private agenda: Agenda[] = []
 
-  obtenerAgenda(){
+  obtenerAgenda() : any[]{
     return this.agenda
   }
 
-  agregarAgenda(nuevaAgenda: {
-    fecha: string;
-    id: null;
-    nombre: string;
-    address: string;
-  }) {
-  this.agenda.push(<Agenda>nuevaAgenda)
+  agregarAgenda(nuevaAgenda: Agenda) {
+    this.agenda.push(nuevaAgenda);
   }
 
   actualizarAgenda(AgendaActualzada:Agenda):
@@ -40,11 +35,6 @@ export class AgendaService {
       // Utiliza throwError para emitir un error observable
       return throwError('Agenda no encontrado');
     }
-  }
-
-  obtenerProgramacionDelDia() {
-    // Simplemente devuelve la programación del día
-    return this.programacionDelDia;
   }
 
   cancelarServicio(servicioId: number) {

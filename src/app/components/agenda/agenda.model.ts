@@ -1,6 +1,7 @@
 export interface Agenda {
-  fecha: string;
   id: null;
-  nombre: string;
   address: string;
+  asigned_date: string;
+  buy_date: string;
+  user_id: string;
 }

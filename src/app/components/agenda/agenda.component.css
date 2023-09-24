@@ -43,3 +43,16 @@
   margin-right: 10px; /* Añade espacio entre los botones si es necesario */
   font-family: Arial, sans-serif;
 }
+
+/* Estilo para el contenedor principal */
+.horizontal-container {
+  display: flex; /* Hace que los elementos hijos se alineen horizontalmente */
+  justify-content: space-between; /* Añade espacio horizontal entre los elementos */
+}
+
+/* Estilo para cada elemento <span> dentro del contenedor */
+.horizontal-container .p-float-label {
+  display: inline-block; /* Hace que los elementos <span> estén en línea */
+  margin-right: 20px; /* Ajusta el margen derecho según sea necesario */
+}
+
